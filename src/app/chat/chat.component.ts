@@ -27,6 +27,7 @@ export class ChatComponent implements OnInit {
 
   onKeydown(event) {
     this.sendMessage(this.inputMessage);
+    this.inputMessage = "";
   }
 
   private initIoConnection(): void {
