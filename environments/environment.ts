@@ -1,3 +1,3 @@
 export const environment = {
-    webserverUrl: 'http://localhost:8080/'
+    webserverUrl: 'http://localhost:5000/'
   };

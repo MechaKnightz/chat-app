@@ -3,10 +3,11 @@ import { Observable } from 'rxjs';
 import { Observer } from 'rxjs';
 import { Message } from '../model/message';
 import { Event } from '../model/event'
+import { environment } from './../../../../../environments/environment';
 
 import * as socketIo from 'socket.io-client';
 
-const SERVER_URL = 'https://chat-app-server-constantin.herokuapp.com/';
+const SERVER_URL = environment.webserverUrl;
 
 @Injectable({
   providedIn: 'root'
