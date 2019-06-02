@@ -1,0 +1,1 @@
+"heroku-postbuild": "ng build --prod"
