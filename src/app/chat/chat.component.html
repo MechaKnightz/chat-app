@@ -1,0 +1,11 @@
+<div>
+  <ul class="messages">
+      <li *ngFor="let message of messages">
+          <span class="message">{{message.content}}</span>
+      </li>
+  </ul>
+  <label>Message:
+      <input (keydown.enter)="onKeydown($event)" [(ngModel)]="inputMessage" placeholder="message">
+  </label>
+  
+</div>
