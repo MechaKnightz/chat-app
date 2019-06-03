@@ -5,7 +5,6 @@ import { Event } from './shared/model/event';
 import { Message } from './shared/model/message';
 import { User } from './shared/model/user';
 import { SocketService } from './shared/services/socket.service';
-import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'tcc-chat',
@@ -24,7 +23,6 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.initIoConnection();
-    console.log(environment.webserverUrl);
   }
 
   onKeydown(event) {
