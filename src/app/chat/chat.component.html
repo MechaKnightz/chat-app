@@ -1,11 +1,16 @@
 <div>
   <ul class="messages">
       <li *ngFor="let message of messages">
-          <span class="message">{{message.content}}</span>
+          <span class="message">{{message.from.name}}: {{message.content}}</span>
       </li>
   </ul>
   <label>Message:
       <input (keydown.enter)="onKeydown($event)" [(ngModel)]="inputMessage" placeholder="message">
   </label>
-  
+  <label>SetUser:
+        <input [(ngModel)]="user.name" placeholder="username">
+    </label>
+  <div *ngIf="user">
+      <h1>Current username: {{user.name}}</h1>
+  </div>
 </div>

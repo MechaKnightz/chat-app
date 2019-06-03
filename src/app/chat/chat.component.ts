@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
 
   ngOnInit(): void {
     this.initIoConnection();
+    this.user = {};
   }
 
   onKeydown(event) {
