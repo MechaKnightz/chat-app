@@ -17,6 +17,7 @@ import { JwtInterceptor } from '@app/_helpers/jwt.interceptor';
 
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthenticationService } from '@app/_services/authentication.service';
 
 
 @NgModule({

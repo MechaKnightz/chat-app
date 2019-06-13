@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'detail/:id', component: HeroDetailComponent },
   { path: 'heroes', component: HeroesComponent },
-  { path: 'chat', component: ChatComponent },
+  { path: 'chat', component: ChatComponent,  canActivate: [AuthGuard]  },
   { path: '**', redirectTo: '' }
 ];
 

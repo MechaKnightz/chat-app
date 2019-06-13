@@ -6,6 +6,8 @@ import { environment } from '@src/environments/environment';
 
 import * as socketIo from 'socket.io-client';
 
+import { AuthenticationService } from '@app/_services/authentication.service';
+
 const SERVER_URL = environment.apiUrl;
 
 @Injectable({
@@ -14,8 +16,14 @@ const SERVER_URL = environment.apiUrl;
 export class SocketService {
   private socket;
 
+  constructor(private authenticationService: AuthenticationService) {}
+
   public initSocket(): void {
       this.socket = socketIo(SERVER_URL);
+      let currentUser = this.authenticationService.currentUserValue;
+      console.log(currentUser);
+      let token = currentUser.token
+      this.socket.emit('authentication', {token});
   }
 
   public send(message: Message): void {
@@ -24,7 +32,9 @@ export class SocketService {
 
   public onMessage(): Observable<Message> {
       return new Observable<Message>(observer => {
+            
           this.socket.on('message', (data: Message) => observer.next(data));
+          
       });
   }
 
