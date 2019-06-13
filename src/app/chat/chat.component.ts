@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Action } from './shared/model/action';
-import { Event } from './shared/model/event';
-import { Message } from './shared/model/message';
-import { User } from './shared/model/user';
-import { SocketService } from './shared/services/socket.service';
+import { Action } from '@app/_models/action';
+import { Event } from '@app/_models/event';
+import { Message } from '@app/_models/message';
+import { User } from '@app/_models/user';
+import { SocketService } from '@app/_services/socket.service';
 
 @Component({
   selector: 'tcc-chat',

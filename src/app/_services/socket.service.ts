@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Observer } from 'rxjs';
-import { Message } from '../model/message';
-import { Event } from '../model/event'
-import { environment } from '../../../../environments/environment';
+import { Message } from '@app/_models/message';
+import { Event } from '@app/_models/event'
+import { environment } from '@src/environments/environment';
 
 import * as socketIo from 'socket.io-client';
 
-const SERVER_URL = environment.webserverUrl;
+const SERVER_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'

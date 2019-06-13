@@ -1,4 +1,5 @@
 export const environment = {
     production: true,
-    webserverUrl: 'https://chat-app-server-constantin.herokuapp.com/'
+    apiUrl: 'https://chat-app-server-constantin.herokuapp.com',
+    loginUrl: 'todo'
   };
