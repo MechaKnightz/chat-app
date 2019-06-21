@@ -1,10 +1,13 @@
-<div>
-  <ul class="messages">
-      <li *ngFor="let message of messages">
-          <span class="message">{{message.user.name}}: {{message.content}}</span>
-      </li>
-  </ul>
-  <label>Message:
-      <input (keydown.enter)="onKeydown($event)" [(ngModel)]="inputMessage" placeholder="message">
-  </label>
+<div class="chat-wrapper">
+    <div class="messages-wrapper">
+        <ul class="messages">
+            <li *ngFor="let message of messages" class="message">
+                <span class="message-span">{{message.user.name}}: {{message.content}}</span>
+                <hr>
+            </li>
+        </ul>
+    </div>
+    <div class="message-input-wrapper">
+        <input class="message-input" (keydown.enter)="onKeydown($event)" [(ngModel)]="inputMessage" placeholder="message">
+    </div>
 </div>
