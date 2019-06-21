@@ -14,6 +14,14 @@
     justify-content: center;
     align-items: center;
     margin: 0.3em;
-    border-radius: 1em;
-    background: $background-alt;
+    border-radius: 1.2em;
+    background: $background;
+    cursor: pointer;
+    transition: background-color $animation-duration linear, border-color $animation-duration linear,
+    color $animation-duration linear, box-shadow $animation-duration linear, transform $animation-duration ease;
+}
+
+.button:hover {
+    box-shadow: 0 0 0 2px $focus;
+    border-radius: 0.7em;
 }
