@@ -5,6 +5,11 @@ import { LoginUser } from '@app/_models/loginUser';
 import { AuthenticationService } from '@app/_services/authentication.service';
 import { UserService } from '@app/_services/user.service';
 
+@Component({
+    selector: 'home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
+  })
 @Component({templateUrl: 'home.component.html'})
 export class HomeComponent {
     currentUser: LoginUser;
