@@ -8,16 +8,17 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './app.routing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { ChatModule } from './chat/chat.module';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ChatComponent } from './chat/chat.component'
 
 import { ErrorInterceptor } from '@app/_helpers/error.interceptor';
 import { JwtInterceptor } from '@app/_helpers/jwt.interceptor';
 
 import { ReactiveFormsModule }    from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AuthenticationService } from '@app/_services/authentication.service';
+import { BaseComponent } from './base/base.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 @NgModule({
@@ -27,7 +28,6 @@ import { AuthenticationService } from '@app/_services/authentication.service';
     FormsModule,
     AppRoutingModule,
     SharedModule,
-    ChatModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
@@ -37,7 +37,10 @@ import { AuthenticationService } from '@app/_services/authentication.service';
     HeroDetailComponent,
     MessagesComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    BaseComponent,
+    ChatComponent,
+    SidebarComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

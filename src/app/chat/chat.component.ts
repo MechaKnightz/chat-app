@@ -7,7 +7,7 @@ import { User } from '@app/_models/user';
 import { SocketService } from '@app/_services/socket.service';
 
 @Component({
-  selector: 'tcc-chat',
+  selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })

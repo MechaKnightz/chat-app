@@ -4,6 +4,7 @@ import { first } from 'rxjs/operators';
 import { LoginUser } from '@app/_models/loginUser';
 import { AuthenticationService } from '@app/_services/authentication.service';
 import { UserService } from '@app/_services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'home',
@@ -16,6 +17,7 @@ export class HomeComponent {
     userFromApi: LoginUser;
 
     constructor(
+        private router: Router,
         private userService: UserService,
         private authenticationService: AuthenticationService
     ) {
@@ -26,5 +28,11 @@ export class HomeComponent {
         this.userService.getById(this.currentUser.id).pipe(first()).subscribe(user => { 
             this.userFromApi = user;
         });
+    }
+
+    logout()
+    {
+        this.authenticationService.logout();
+        this.router.navigate(['/login']);
     }
 }
